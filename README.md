@@ -5,7 +5,10 @@ Solutions for problems on GeeksForGeeks.org
   "recursion" or "hashmap". The solutions are all done using whatever data structure
   or algorithm they had in mind to solve the problem.
 
-- For some solutions I have included before and after thoughts 
+- For some solutions I have included before and after thoughts
+
+- Either you had to implement a function for the driver code already written for you,
+  or you had to write all of the code yourself.
 
 - Some solutions have comments in them that were written by the person setting up the problem.
   Their purpose is to offer clarity such as "the driver code is already written just implement the
