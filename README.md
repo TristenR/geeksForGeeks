@@ -3,7 +3,7 @@ Solutions for problems on GeeksForGeeks.org
 
 - Certain problems were listen under different sections in the website such as
   "recursion" or "hashmap". The solutions are all done using whatever data structure
-  or algorithms they had in mind to solve the problem.
+  or algorithm they had in mind to solve the problem.
 
 - For some solutions I have included before and after thoughts 
 
