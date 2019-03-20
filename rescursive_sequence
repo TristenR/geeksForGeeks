@@ -1,0 +1,100 @@
+***
+DESCRIPTION
+***
+
+A function f is defined as follows F(n)= (1) +(2*3) + (4*5*6) ... n. Given an integer n the task is to print the F(n)th term.
+
+Input:
+The first line of input contains an integer T denoting the number of test cases. Then T test cases follow.
+Each test contains an integer n.
+
+Output:
+For each test case print the nth term of the sequence. .
+
+Constraints:
+1<=T<=100
+1<=N<=10
+
+Example:
+Input:
+2
+5
+7
+
+Output:
+365527
+6006997207
+
+
+***
+BEFORE-THOUGHTS
+***
+
+The last digit of every product in parentheses is the sequence below 
+
+lastdigit = (1+2+3+4+...x) = (x*(x+1))/2
+
+where x is the position of that specific product in the sum of products.
+
+For example the last digit of the third pair parentheses of the function F(n) above is 6 which is equal to 1+2+3
+
+Now all we must do is calculate the products of the xth parentheses, then x-1 paretheses, etc
+and add them together. We do this with recursion.
+
+Obviously the length of any pair of parentheses is its position in the sum of products.
+
+***
+SOLUTION
+***
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+    
+    public static long Rec1(int num){
+        
+        if(num == 1)
+            return 1;
+            
+        int lastDig = (num * (num+1))/2;
+        
+        long term = Rec2(num, lastDig);
+        
+        return term + Rec1(num - 1);
+        
+    }
+    
+    public static long Rec2(int snum, int slastDig){
+        if(snum == 0)
+            return 1;
+        
+        long ans = slastDig * Rec2(snum-1, slastDig-1);     
+            
+        return(ans);
+    }
+    
+	public static void main (String[] args) {
+		//code
+		Scanner sc = new Scanner(System.in);
+		
+		int testNum = sc.nextInt();
+		
+		while(testNum-- > 0){
+		    
+		    int test = sc.nextInt();
+		    
+		    System.out.println(Rec1(test));
+		        
+		}
+	}
+}
+
+
+***
+AFTER-THOUGHTS
+***
+
+We didnt have to use recursion to determine the products but it felt fun using recursion again for
+practice
