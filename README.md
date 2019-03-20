@@ -1,7 +1,7 @@
 # geeksForGeeks
 Solutions for problems on GeeksForGeeks.org
 
-- Certain problems were listen under different sections in the website such as
+- Certain problems were listed under different sections in the website such as
   "recursion" or "hashmap". The solutions are all done using whatever data structure
   or algorithm they had in mind to solve the problem.
 
