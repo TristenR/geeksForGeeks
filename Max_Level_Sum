@@ -1,0 +1,37 @@
+
+
+Code
+
+class GfG
+{
+	public static int maxLevelSum(Node root)
+         {
+         //add code here.
+         Queue<Node> q1 = new LinkedList<>();
+         Queue<Node> q2 = new LinkedList<>();
+         q1.add(root);
+         Node node;
+         int highest = root.data;
+         int sum = 0;
+         while(q1.peek()!=null){
+             sum = 0;
+             while(q1.peek()!=null){
+                 node = q1.poll();
+                 if(node.left!=null){
+                     sum+=node.left.data;
+                     q2.add(node.left);
+                 }
+                 if(node.right!=null){
+                     sum+= node.right.data;
+                     q2.add(node.right);
+                 }
+             }
+             if(sum>highest){
+                 highest = sum;
+             }
+             q1 = q2;
+         }
+         return highest;
+
+    }
+}
